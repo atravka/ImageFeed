@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImagesListViewController: UIViewController {
+final class ImagesListViewController: UIViewController {
 
     @IBOutlet private var tableView: UITableView!
 
@@ -72,6 +72,14 @@ extension ImagesListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        enum UIConstants {
+            static let rightIndent = 16.0
+            static let leftIndent = 16.0
+            static let topIndent = 4.0
+            static let bottomIndent = 4.0
+        }
+        
         let rowNumber = indexPath.row
         let imageName = photosName[rowNumber]
         guard let image: UIImage = UIImage(named: imageName) else {
@@ -79,9 +87,9 @@ extension ImagesListViewController: UITableViewDelegate {
         }
         let imageWidth = image.size.width
         let imageHeight = image.size.height
-        let imageViewWidth = tableView.bounds.width - 32 // 16+16 left+right indent
+        let imageViewWidth = tableView.bounds.width - (UIConstants.rightIndent + UIConstants.leftIndent)
         let scale = imageViewWidth / imageWidth
-        let cellHeight = imageHeight * scale + 4 + 4 // 4+4 top+bottom indent
+        let cellHeight = imageHeight * scale + (UIConstants.bottomIndent + UIConstants.topIndent)
         
         return cellHeight
     }
