@@ -50,7 +50,7 @@ extension ImagesListViewController: UITableViewDataSource {
 }
 
 extension ImagesListViewController {
-    func configCell(for cell: ImagesListCell, with indexPath: IndexPath) {
+    private func configCell(for cell: ImagesListCell, with indexPath: IndexPath) {
         let rowNumber = indexPath.row
         let imageName = photosName[rowNumber]
         guard let image: UIImage = UIImage(named: imageName) else {
