@@ -13,8 +13,6 @@ final class SingleImageViewController: UIViewController {
             guard isViewLoaded, let image else { return }
             
             imageView.image = image
-//            guard case imageView.frame.size = image?.size else { return }
-//            guard let image: UIImage = imageView.image else { return }
             imageView.frame.size = image.size
             rescaleAndCenterImageInScrollView(image: image)
         }
@@ -40,13 +38,10 @@ final class SingleImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        imageView.image = image
+
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
 
- //       guard let image: UIImage = imageView.image else { return }
-   //     rescaleAndCenterImageInScrollView(image: image)
         shareButton.layer.cornerRadius = shareButton.frame.size.height / 2
         shareButton.backgroundColor = .ypBlackIOS
         
