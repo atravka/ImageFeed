@@ -36,7 +36,6 @@ final class ProfileViewController: UIViewController {
         view.addSubview(userNameLabel)
         
         NSLayoutConstraint.activate([
-            userNameLabel.heightAnchor.constraint(equalToConstant: 18),
             userNameLabel.topAnchor.constraint(equalTo: userPicImageView.bottomAnchor, constant: 8),
             userNameLabel.leadingAnchor.constraint(equalTo: userPicImageView.leadingAnchor)
         ])
@@ -50,7 +49,6 @@ final class ProfileViewController: UIViewController {
         view.addSubview(loginNameLabel)
         
         NSLayoutConstraint.activate([
-            loginNameLabel.heightAnchor.constraint(equalToConstant: 18),
             loginNameLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 8),
             loginNameLabel.leadingAnchor.constraint(equalTo: userPicImageView.leadingAnchor)
         ])
@@ -64,7 +62,6 @@ final class ProfileViewController: UIViewController {
         view.addSubview(descriptionLabel)
         
         NSLayoutConstraint.activate([
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 18),
             descriptionLabel.topAnchor.constraint(equalTo: loginNameLabel.bottomAnchor, constant: 8),
             descriptionLabel.leadingAnchor.constraint(equalTo: userPicImageView.leadingAnchor)
         ])
